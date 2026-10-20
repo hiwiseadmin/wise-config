@@ -1,0 +1,62 @@
+{
+    "name": "wiseadmin/wise-config",
+    "description": "WiseAdmin 键值配置与字典管理包 — 支持多类型值、分组缓存、历史版本追溯与 HTML 净化过滤",
+    "homepage": "https://github.com/hiwiseadmin/wise-config",
+    "type": "library",
+    "license": "Apache-2.0",
+    "keywords": [
+        "thinkphp6",
+        "config",
+        "settings",
+        "dictionary",
+        "dict",
+        "configuration",
+        "wiseadmin"
+    ],
+    "authors": [
+        {
+            "name": "WiseAdmin Team",
+            "email": "wiseadmin@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "topthink/framework": "^8.0",
+        "topthink/think-migration": "^3.0",
+        "wiseadmin/wise-support": "1.0.*"
+    },
+    "suggest": {
+        "ezyang/htmlpurifier": "Recommended for robust HTML XSS filtering"
+    },
+    "autoload": {
+        "psr-4": {
+            "wise\\config\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "think": {
+            "services": [
+                "wise\\config\\ConfigServiceProvider"
+            ],
+            "config": {
+                "wise-config": "config/wise-config.php"
+            },
+            "migrate-path": "database/migrations"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/docs",
+            "/.github",
+            "/phpunit.xml",
+            "/.gitattributes",
+            "/.gitignore",
+            "/*.md",
+            "!/README.md",
+            "/qa/"
+        ]
+    }
+}
